@@ -1,0 +1,53 @@
+<section>
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    [formGroup]="signupForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label>Your E-Mail</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="your email"
+        formControlName="email"
+      />
+      <mat-hint>Please enter a valid email</mat-hint>
+      <mat-error>Invalid / missing email</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Your Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="your Password"
+        formControlName="password"
+      />
+      <mat-hint>Please enter your password</mat-hint>
+      <mat-error>Enter at least 6 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Your birthdate</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="datePicker" />
+      <mat-hint>Choose your birthdate</mat-hint>
+      <mat-error>Enter a valid date</mat-error>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-checkbox color="primary" formControlName="agreement"
+      >Agreed to our terms and conditions</mat-checkbox
+    >
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="signupForm.invalid"
+    >
+      Sign Up
+    </button>
+  </form>
+</section>
