@@ -2,11 +2,11 @@
   <form
     fxLayout="column"
     fxLayoutAlign="center center"
-    fxLayoutGap="10px"
+    fxLayoutGap="15px"
     [formGroup]="signupForm"
     (ngSubmit)="onSubmit()"
   >
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Your E-Mail</mat-label>
       <input
         type="email"
@@ -17,7 +17,7 @@
       <mat-hint>Please enter a valid email</mat-hint>
       <mat-error>Invalid / missing email</mat-error>
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Your Password</mat-label>
       <input
         type="password"
@@ -29,7 +29,7 @@
       <mat-error>Enter at least 6 characters</mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Your birthdate</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="datePicker" />
       <mat-hint>Choose your birthdate</mat-hint>

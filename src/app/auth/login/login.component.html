@@ -3,10 +3,10 @@
     [formGroup]="loginForm"
     fxLayout="column"
     fxLayoutAlign="center center"
-    fxLayoutGap="10px"
+    fxLayoutGap="15px"
     (ngSubmit)="onSubmit()"
   >
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <input
         type="email"
         matInput
@@ -16,7 +16,7 @@
       <mat-hint>Please enter a valid email</mat-hint>
       <mat-error>Invalid / missing email</mat-error>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <input
         type="password"
         matInput
